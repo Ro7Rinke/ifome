@@ -1,15 +1,20 @@
 import { Injectable } from '@angular/core';
 import {AngularFireAuth} from '@angular/fire/auth';
 import {AngularFireDatabase} from '@angular/fire/database';
-
-import {AlertController} from '@ionic/angular'
+import{Router} from '@angular/router';
+import {AlertController, NavController} from '@ionic/angular'
 import {auth} from 'firebase/app'
 @Injectable({
   providedIn: 'root'
 })
 export class AutenticService {
 
-  constructor(private fbAutentica:AngularFireAuth, private alertCrtl: AlertController, private afDB: AngularFireDatabase) { }
+  constructor(
+    private fbAutentica:AngularFireAuth,
+    private alertCrtl: AlertController,
+    private afDB: AngularFireDatabase,
+    private Route:Router,
+    private navCrtl: NavController ) { }
 
   autenticacao(ehlogin:boolean, nome:string, email:string, senha:string){
 
@@ -22,11 +27,19 @@ export class AutenticService {
   }
 
   loguout():Promise<void>{
+    this.navCrtl.navigateBack('login');
     return this.fbAutentica.auth.signOut();
+    
+
   }
 
   private loginConta(email:string, senha:string){
-    this.fbAutentica.auth.signInWithEmailAndPassword(email, senha);
+    this.fbAutentica.auth.signInWithEmailAndPassword(email, senha).then (() =>{
+      this.presentAlert("Usuario","Usuario autenticado").then(()=>{
+        this.navCrtl.navigateForward('comercios');
+      });
+      
+    });
   }
 
   private criarConta(nome:string, email:string, senha:string)
@@ -59,16 +72,17 @@ export class AutenticService {
     }, error =>{
       throw new Error(error.message)
     }).then((response) =>{
-      this.presentAlert();
+      this.presentAlert("Usuario","Usuario cadastrado com sucesso");
+      
     })
     
     this.loguout();
 }
 
-async presentAlert() {
+async presentAlert(title: string, message: string ) {
   const alert = await this.alertCrtl.create({
-    header: 'Usuário',
-    message: 'Usuário cadastrado com sucesso.',
+    header: title,
+    message: message,
     buttons: ['Confirmar']
   });
 

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import {AutenticService} from '../../auntenticacao/autentic.service';
 
@@ -9,12 +9,6 @@ import {AutenticService} from '../../auntenticacao/autentic.service';
 })
 export class LoginPage implements OnInit {
   autenticacaoForm: FormGroup;
-
-
-  configs = {
-    ehLogin:true
-  }
-  private nomeControll = new FormControl('',[Validators.required,Validators.minLength(3)]);
   private nomeTmp:String;
   
     constructor(private servicoAutenticacao:AutenticService,private fb:FormBuilder) { }
@@ -26,7 +20,6 @@ export class LoginPage implements OnInit {
   
       private createForm(): void{
         this.autenticacaoForm = this.fb.group({
-          nome: ['',[Validators.required,Validators.minLength(3)]],
           email: ["", [Validators.required, Validators.email]],
           password: ["", [Validators.required, Validators.minLength(8), Validators.maxLength(12)]] 
         })
@@ -34,37 +27,17 @@ export class LoginPage implements OnInit {
       }
   
       async onSubmit(): Promise<void>{
-        if(this.configs.ehLogin){
+        try {
           this.nomeTmp = "";
-        }else{
-          this.nomeTmp = this.autenticacaoForm.get('nome').value;
-        }
-  
-        try {
-          const credencial = await this.servicoAutenticacao.autenticacao(true,this.nomeTmp.valueOf(), this.autenticacaoForm.get('email').value,
+           await this.servicoAutenticacao.autenticacao(true,this.nomeTmp.valueOf(), this.autenticacaoForm.get('email').value,
           this.autenticacaoForm.get('password').value);
   
-          console.log("Sucesso Credencial", credencial);
+          console.log("Sucesso Credencial");
         } catch (e) {
           console.log("Ocorreu um erro ", e);
         }
       }
   
-      async onSubmitRegister(): Promise<void>{
-        
-        this.nomeTmp = this.autenticacaoForm.get('nome').value;
-        
-  
-        try {
-          const credencial =  await this.servicoAutenticacao.autenticacao(false,this.nomeTmp.valueOf(), this.autenticacaoForm.get('email').value,
-          this.autenticacaoForm.get('password').value);
-          
-        } catch (e) {
-          console.log("Ocorreu um erro ", e);
-        }
-        
-      }
-
       get email(): FormControl{
         return <FormControl>this.autenticacaoForm.get('email');
       }

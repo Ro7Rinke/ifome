@@ -1,9 +1,45 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>cadastro</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
+    <ion-slide class="fundo">
+    <div class="slide-inner ion-padding">
+        <img class="logo" src="assets/img/logo.png" alt="Logo">
 
+        <div class="form">
+            <form [formGroup] = "autenticacaoForm">
+            <ion-label>Nome:</ion-label>
+          <ion-item class="input" lines="none">
+              <ion-icon name="md-person"></ion-icon>
+            <ion-input type="text" formControlName="nome"></ion-input>
+          </ion-item>
+            </form>
+        </div>
+        
+        <div class="form">
+            <form [formGroup] = "autenticacaoForm">
+            <ion-label>E-mail:</ion-label>
+          <ion-item class="input " lines="none">
+            <ion-icon name="mail"></ion-icon>
+            <ion-input type="email" formControlName="email"></ion-input>
+          </ion-item>
+          </form>
+        </div>
+        <div class="form">
+            <form [formGroup] = "autenticacaoForm">
+            <ion-label>Senha:</ion-label>
+          <ion-item class="input " lines="none">
+              <ion-icon name="md-key"></ion-icon>
+            <ion-input type="password" formControlName="password"></ion-input>
+          </ion-item>
+          </form>
+        </div>
+      
+        <button class="button ion-margin-top" (click)="onSubmitRegister()" color="light" expand="block">
+          Cadastrar
+        </button>
+
+        <div class="link ion-margin-top">
+            <span>Já é usuário? </span>
+            <span><a href="/login">Entrar</a></span>
+        </div>
+      </div>
+    </ion-slide>
 </ion-content>
