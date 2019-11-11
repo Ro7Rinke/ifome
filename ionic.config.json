@@ -1,5 +1,7 @@
 {
   "name": "ifome",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

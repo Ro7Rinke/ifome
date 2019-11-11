@@ -6,7 +6,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { ComerciosPage } from './comercios.page';
-
+import{ AngularFirestoreModule } from '@angular/fire/firestore';
 const routes: Routes = [
   {
     path: '',
@@ -19,6 +19,7 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     IonicModule,
+    AngularFirestoreModule,
     RouterModule.forChild(routes)
   ],
   declarations: [ComerciosPage]
