@@ -1,0 +1,68 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap);
+ion-header ion-toolbar{
+    --background: rgb(207, 2, 2);
+    --color: #f1f1f1;
+    font-family: "Roboto";
+    box-shadow: rgb(18,18,18,0.3) 0 3px 3px 0;
+
+}
+
+ion-label{
+    text-shadow: -1px 3px 2px rgb(55,55,55,0.5);
+}
+
+ion-header ion-item{
+    --background: rgb(207, 2, 2);
+    --color: #f1f1f1;
+    font-size: 30px;
+    font-size: 18px;
+}
+
+.barra ion-label{
+    margin-left: -5px;
+    
+}
+
+ .barra-icons{
+    margin-left: -11px;
+    font-size: 27px;
+    text-shadow: -1px 3px 2px rgb(55,55,55,0.5);
+    
+}
+
+.perfil{
+    margin-top:10px ;
+    font-size: 30px;
+    margin-left: 190px;
+    float: right;
+    text-shadow: -1px 3px 2px rgb(55,55,55,0.5);
+    
+    
+}
+.perfil  ion-label{
+    position: absolute;
+    right: 65px;
+    top: 15px;
+}
+.body{
+    --background:#f1f1f1;
+    font-family: "Roboto";
+    color: #202020;
+    height: 100%;
+    width: auto;
+    
+}
+.title{
+    font-size: 20px;
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
+}
+.title span{
+    float: left;
+}
+.title  ion-icon{
+    float: right;
+    font-size: 30px;
+    color: #202020;
+}
