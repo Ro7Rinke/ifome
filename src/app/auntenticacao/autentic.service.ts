@@ -62,14 +62,17 @@ export class AutenticService {
 
         return this.afDB.list('userProfile').update(uid, userObject).then(() => true,
          error =>{
+           this.presentAlert("ERRO",error);
           throw new Error(error.message)
          
          })
 
       }, error =>{
+        this.presentAlert("ERRO",error);
         throw new Error(error.message)
       })
     }, error =>{
+      this.presentAlert("ERRO",error);
       throw new Error(error.message)
     }).then((response) =>{
       this.presentAlert("Usuario","Usuario cadastrado com sucesso");

@@ -21,7 +21,7 @@ export class LoginPage implements OnInit {
       private createForm(): void{
         this.autenticacaoForm = this.fb.group({
           email: ["", [Validators.required, Validators.email]],
-          password: ["", [Validators.required, Validators.minLength(8), Validators.maxLength(12)]] 
+          password: ["", [Validators.required, Validators.minLength(6), Validators.maxLength(12)]] 
         })
   
       }
@@ -31,10 +31,9 @@ export class LoginPage implements OnInit {
           this.nomeTmp = "";
            await this.servicoAutenticacao.autenticacao(true,this.nomeTmp.valueOf(), this.autenticacaoForm.get('email').value,
           this.autenticacaoForm.get('password').value);
-  
-          console.log("Sucesso Credencial");
         } catch (e) {
           console.log("Ocorreu um erro ", e);
+          alert(e);
         }
       }
   
