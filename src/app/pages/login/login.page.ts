@@ -31,6 +31,7 @@ export class LoginPage implements OnInit {
           this.nomeTmp = "";
            await this.servicoAutenticacao.autenticacao(true,this.nomeTmp.valueOf(), this.autenticacaoForm.get('email').value,
           this.autenticacaoForm.get('password').value);
+          this.createForm();
         } catch (e) {
           console.log("Ocorreu um erro ", e);
           alert(e);
