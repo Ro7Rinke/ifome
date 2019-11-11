@@ -1,0 +1,46 @@
+<ion-content>
+  <ion-slides class="fundo">
+     <ion-slide>
+         <div class="slide-inner ion-padding">
+           <img class="logo" src="/assets/img/logo.png" alt="Logo">
+    <form [formGroup] = "autenticacaoForm" (submit)= "onSubmitLogin">
+             <ion-item class="input class ion-margin-top" lines="none">
+                <ion-input name= "email" type="email" palceholder="Email" formControlName="email" ></ion-input>
+             </ion-item>
+    
+             <ion-item class="input class ion-margin-top" lines="none">
+                <ion-input name="password" type="password" palceholder="Senha" formControlName="password"></ion-input>
+             </ion-item>
+    </form>
+             
+             <ion-button class="button ion-margin-top"  (click)="onSubmit()" color="light" expand="block">
+                Entrar
+             </ion-button>
+           </div>
+     </ion-slide>
+     <ion-slide>  
+         <div class="slide-inner ion-padding" >
+             <img class="logo" src="/assets/img/logo.png" alt="Logo">
+             <form [formGroup] = "autenticacaoForm">
+             <!-- <label class="ion-margin-top">Name</label> -->
+             <ion-item class="input ion-margin-top" lines="none">
+               <ion-input name="nome" type="text" formControlName="nome" ></ion-input>
+             </ion-item>
+             
+             <!-- <label class="ion-margin-top">Email</label> -->
+             <ion-item class="input ion-margin-top" lines="none">
+               <ion-input name= "email" type="email" formControlName="email" ></ion-input>
+             </ion-item>
+
+             <!-- <label class="ion-margin-top">Senha</label> -->
+             <ion-item class="input ion-margin-top" lines="none">
+               <ion-input name="password" type="password" formControlName="password"  ></ion-input>
+             </ion-item>
+   </form>
+             <ion-button class="button ion-margin-top" (click)="onSubmitRegister()"  color="light" expand="block">
+               Cadastrar
+             </ion-button>
+           </div>
+     </ion-slide>
+  </ion-slides>
+</ion-content>
