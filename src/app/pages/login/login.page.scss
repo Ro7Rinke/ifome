@@ -1,0 +1,74 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap);
+
+
+
+ion-content{
+    font-family: "Roboto";
+}
+ion-slides{
+    height: 100%;
+}
+ion-icon{
+ color: #6b6b6b;   
+}
+.form{
+    display: inline-block;
+}
+.form ion-label{
+    color:#f1f1f1;
+    text-shadow: -1px 3px 2px rgb(55,55,55,0.5);
+    margin-right: 220px;
+    font-size: 15px;
+}
+.fundo{
+    height: 100%;
+    width: auto;
+    background: rgb(207, 2, 2);
+}
+.logo{
+    margin-bottom:5%;
+    width: 230px;
+    height: auto;
+}
+   
+.button{
+    height: 40px;
+    width: 150px;
+    border-radius: 4px;
+    background: #202020;
+    color: #f1f1f1;
+    box-shadow: #000000 0 5px 5px 0;
+    font-size: 18px;
+    font-family: "Roboto";
+    font-weight: bold;
+}
+.button:active{
+    position: relative;
+    top:3px;
+    box-shadow: #000000 0 3px 3px 0;
+}
+.input{
+    border-radius: 4px;
+}
+.slide-inner{
+    margin-top: 120px;
+}
+.link{
+  color: #f1f1f1; 
+  font-family: "Roboto";
+  text-shadow: -1px 2px 2px rgb(55,55,55,0.5); 
+  text-decoration:none;
+  font-size: 16px;
+  margin-top: 40px;
+}
+
+.link a:link{
+    color: #f1f1f1;  
+    font-family: "Roboto";
+    font-weight: bolder;
+    text-decoration:none;
+    text-shadow: -1px 3px 2px rgb(55,55,55,0.5);
+}
+.link a:visited{
+    color: #f1f1f1;  
+}

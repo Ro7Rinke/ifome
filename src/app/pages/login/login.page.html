@@ -1,0 +1,32 @@
+<ion-content>
+  <ion-slide class="fundo">
+      <div class="slide-inner ion-padding">
+        <img class="logo" src="/assets/img/logo.png" alt="Logo">
+      <div class="form">
+        
+          <ion-label>E-mail:</ion-label>
+            <ion-item class="input" >
+                <ion-icon name="mail"></ion-icon>
+              <ion-input type="email" palceholder="Email" formControlName="email"></ion-input>
+            </ion-item>
+        </div>
+        <div class="form">
+            <ion-label>Senha:</ion-label>
+            <ion-item class="input" >
+              <ion-icon name="md-key"></ion-icon>
+             <ion-input type="palceholder" palceholder="Senha" formControlName="password"></ion-input>
+          </ion-item>
+        </div>
+          
+        <button ion-button secondary menuToggle class="button ion-margin-top" (click)="login()" color="light" expand="block">
+            Entrar
+        </button>
+          
+          <div class="link ion-margin-top">
+                  <span>Não tem conta?</span>
+                  <span><a  href="/cadastro"> Crie aqui</a></span>
+          </div>
+
+        </div>
+  </ion-slide>
+</ion-content>
